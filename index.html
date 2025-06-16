@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Washington DC - Accueil</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Montserrat', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-white text-black relative min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
+      <!-- Hamburger Menu -->
+      <button aria-label="Menu" class="flex flex-col justify-center space-y-1.5 w-6 h-6">
+        <span class="block h-0.5 bg-black rounded"></span>
+        <span class="block h-0.5 bg-black rounded"></span>
+        <span class="block h-0.5 bg-black rounded"></span>
+      </button>
+
+      <!-- Logo -->
+      <div class="flex-1 flex justify-center">
+        <a href="#" class="text-2xl font-bold tracking-wide text-black select-none">WASHINGTON<br />DC</a>
+      </div>
+
+      <!-- Search Icon -->
+      <button aria-label="Search" class="w-6 h-6 relative">
+        <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" >
+          <circle cx="11" cy="11" r="7" stroke-linecap="round" stroke-linejoin="round"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65" stroke-linecap="round" stroke-linejoin="round"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Spacer for fixed header -->
+  <div class="h-16"></div>
+
+  <!-- Hero Section -->
+  <section class="relative flex-1 bg-gray-100">
+    <div class="relative h-[400px] md:h-[600px] w-full overflow-hidden">
+      <img
+        src="https://washington.org/sites/default/files/styles/washington_hero/public/2023-06/Bridge%20and%20Kayaks%20-%20Credit%20Visit%20Alexandria%20-%20Alex%20Maness.jpg?h=6a7a1a3a&itok=6q6q6q6q"
+        alt="Bridge and Kayaks"
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+      <!-- Callout Box -->
+      <div id="hero-callout" class="absolute top-1/2 right-6 transform -translate-y-1/2 bg-white shadow-lg rounded-md max-w-md p-6 w-full md:w-auto">
+        <button id="hero-callout-close" aria-label="Close" class="absolute top-2 right-3 text-black font-bold text-sm hover:text-gray-600">X</button>
+        <h2 class="text-2xl font-bold mb-4">Score the best of DC with summer deals</h2>
+        <a href="#" class="inline-block border border-purple-700 text-purple-700 px-6 py-2 rounded hover:bg-purple-700 hover:text-white transition">SEE MORE</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cookie Consent Banner -->
+  <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-white shadow-inner border-t border-gray-300 p-4 flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 max-w-7xl mx-auto">
+    <p class="text-sm max-w-xl text-gray-800">
+      Optional cookies including session replay cookies allow us to track website content performance, understand our audience, and ultimately attract more travelers to Washington, DC. You are opted into these optional cookies by default. To deny consent, click “Reject Optional” or “Manage Preferences.” 
+      <a href="#" class="underline text-purple-700 hover:text-purple-900">For more information visit our Privacy Policy.</a>
+    </p>
+    <div class="flex flex-wrap gap-3">
+      <button id="manage-preferences" class="border border-gray-500 text-gray-700 px-4 py-2 rounded hover:bg-gray-100 transition">Manage Preferences</button>
+      <button id="reject-optional" class="bg-purple-700 text-white px-4 py-2 rounded hover:bg-purple-900 transition">Reject Optional</button>
+      <button id="accept-all" class="bg-purple-700 text-white px-4 py-2 rounded hover:bg-purple-900 transition">Accept All</button>
+      <button id="cookie-close" aria-label="Close" class="ml-2 text-black font-bold text-lg hover:text-gray-600">×</button>
+    </div>
+  </div>
+
+  <script>
+    // Close hero callout box
+    document.getElementById('hero-callout-close').addEventListener('click', function() {
+      document.getElementById('hero-callout').style.display = 'none';
+    });
+
+    // Close cookie banner
+    document.getElementById('cookie-close').addEventListener('click', function() {
+      document.getElementById('cookie-banner').style.display = 'none';
+    });
+
+    // Placeholder buttons for cookie banner
+    document.getElementById('manage-preferences').addEventListener('click', function() {
+      alert('Manage Preferences clicked');
+    });
+    document.getElementById('reject-optional').addEventListener('click', function() {
+      alert('Reject Optional clicked');
+    });
+    document.getElementById('accept-all').addEventListener('click', function() {
+      alert('Accept All clicked');
+    });
+  </script>
+</body>
+</html>
